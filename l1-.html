@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+
+</head>
+<body>
+<canvas width="500px" height="500px" style="border: 1px solid red;" id="cvs">
+</canvas>
+</body>
+</html>
+<script>
+    var c=document.getElementById("cvs");
+    var bi=c.getContext("2d");
+    var grad=bi.createLinearGradient(0,0,400,400);
+    grad.addColorStop(0.4,"blue");
+    grad.addColorStop(0.6,"yellow");
+    grad.addColorStop(1,"pink");
+    bi.strokeStyle=grad;
+    bi.lineWidth=20;
+    bi.strokeRect(10,10,480,480);
+    grad=bi.createLinearGradient(50,50,250,250);
+    grad.addColorStop(0.4,"blue");
+    grad.addColorStop(0.6,"yellow");
+    grad.addColorStop(1,"pink");
+    bi.fillStyle=grad;
+    bi.lineWidth=20;
+    bi.fillRect(50,50,200,200)
+</script>

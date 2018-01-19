@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+
+</head>
+<body>
+<canvas width="500px" height="500px" style="border: 1px solid red;" id="cvs">
+</canvas>
+</body>
+</html>
+<script>
+    var c=document.getElementById("cvs");
+    var bi=c.getContext("2d");
+bi.strokeStyle="blue";
+    bi.clearRect(0,0,500,500);
+var x=0;
+var flag=0;
+function run() {
+    if(x<450&&flag==0){
+        x++;
+        bi.strokeRect(x,0,50,50);
+        /*clearInterval(mytime);*/
+    }else{
+        x--;
+        bi.strokeRect(x,0,50,50);
+    }
+
+}
+var mytime=setInterval(run,5);
+</script>
